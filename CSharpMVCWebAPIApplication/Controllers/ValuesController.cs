@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace CSharpMVCWebAPIApplication.Controllers
 {
-    // Create process: New Controller -> Web API 2 Controller with read/write actions
+    // Create process: New Controller -> Web API 2 Controller with read/write actions.
     public class ValuesController : ApiController
     {
         // GET api/values

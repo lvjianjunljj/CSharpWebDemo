@@ -3,12 +3,19 @@
 ################################################################################
 
 /.vs
+
 /CSharpMVCWebAPIApplication/bin
 /CSharpMVCWebAPIApplication.Tests/bin
 /CSharpWebAPIApplication/bin
 /CSharpWebFormsApplication/bin
+
 /CSharpMVCWebAPIApplication/obj
 /CSharpMVCWebAPIApplication.Tests/obj
 /CSharpWebAPIApplication/obj
 /CSharpWebFormsApplication/obj
+
+/CSharpMVCWebAPIApplication/CSharpMVCWebAPIApplication.csproj.user
+/CSharpWebAPIApplication/CSharpWebAPIApplication.csproj.user
+/CSharpWebFormsApplication/CSharpWebFormsApplication.csproj.user
+
 /packages
