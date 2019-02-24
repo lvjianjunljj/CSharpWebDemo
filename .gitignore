@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/CSharpMVCWebAPIApplication/bin
+/CSharpMVCWebAPIApplication.Tests/bin
+/CSharpWebAPIApplication/bin
+/CSharpWebFormsApplication/bin
+/packages
