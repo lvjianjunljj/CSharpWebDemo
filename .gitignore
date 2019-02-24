@@ -7,4 +7,8 @@
 /CSharpMVCWebAPIApplication.Tests/bin
 /CSharpWebAPIApplication/bin
 /CSharpWebFormsApplication/bin
+/CSharpMVCWebAPIApplication/obj
+/CSharpMVCWebAPIApplication.Tests/obj
+/CSharpWebAPIApplication/obj
+/CSharpWebFormsApplication/obj
 /packages
