@@ -1,10 +1,10 @@
-﻿using CSharpMVCWebAPIApplication.Models;
+﻿using CSharpMVCWebAPIApplication.Service.Azure;
+using CSharpMVCWebAPIApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using CSharpMVCWebAPIApplication.DAO.Azure;
 
 namespace CSharpMVCWebAPIApplication.Controllers
 {
@@ -34,7 +34,22 @@ namespace CSharpMVCWebAPIApplication.Controllers
         // function is "id", and the default routeTemplate is "api/{controller}/{id}" in WebApiConfig.cs.
         public Product GetProductsById(int id)
         {
+            string appendString;
+            try
+            {
+                appendString = AzureKeyVault.GetSecret("csharpmvcwebapikeyvault", "AppSecret");
+            }
+            catch (Exception e)
+            {
+                appendString = $"Getting appendString throw Exception: {e.Message}";
+            }
+            List<string> appendLineList = AzureSQLDatabase.GetAllData();
             var product = products.FirstOrDefault((p) => p.Id == id);
+            product.Name += $" :{appendString}";
+            foreach (string appendLine in appendLineList)
+            {
+                product.Name += appendLine;
+            }
             //if (product == null)
             //{
             //    throw new HttpResponseException(HttpStatusCode.NotFound);

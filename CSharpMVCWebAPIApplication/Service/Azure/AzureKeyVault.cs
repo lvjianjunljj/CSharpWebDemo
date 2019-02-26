@@ -4,7 +4,7 @@ using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.KeyVault.Models;
 using Microsoft.Azure.Services.AppAuthentication;
 
-namespace CSharpMVCWebAPIApplication.Application.Azure
+namespace CSharpMVCWebAPIApplication.Service.Azure
 {
     public class AzureKeyVault
     {

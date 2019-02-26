@@ -189,8 +189,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Azure\AzureKeyVault.cs" />
-    <Compile Include="Application\Azure\AzureServiceBusSingleClient.cs" />
+    <Compile Include="DAO\Azure\AzureSQLDatabase.cs" />
+    <Compile Include="Service\Azure\AzureKeyVault.cs" />
+    <Compile Include="Service\Azure\AzureServiceBusSingleClient.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -286,6 +287,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\" />
     <Folder Include="App_Data\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Views\Products\" />
