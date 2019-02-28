@@ -1,10 +1,12 @@
-﻿using System;
+﻿using CSharpMVCWebAPIApplication.Application;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 
 namespace CSharpMVCWebAPIApplication.DAO.Azure
 {
+    // Just a SqlConnection demo. This is useless, we will use SqlSugar to replace SqlConnection. 
     public class AzureSQLDatabase
     {
         public static List<string> GetAllData()
@@ -15,13 +17,13 @@ namespace CSharpMVCWebAPIApplication.DAO.Azure
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
 
                 // your_server.database.windows.net
-                builder.DataSource = @"tcp:csharpmvcwebapidatabaseserver.database.windows.net";
+                builder.DataSource = $"tcp:{Constant.SQL_SERVER_NAME}.database.windows.net";
                 // your_username
-                builder.UserID = @"jianjlv";
+                builder.UserID = $"{Constant.Instance.SQLAccountUserId}@{Constant.SQL_SERVER_NAME}";
                 // your_password
-                builder.Password = "6076361Abb";
+                builder.Password = Constant.Instance.SQLAccountPassword;
                 // your_database
-                builder.InitialCatalog = "CSharpMVCWebAPIDatabase";
+                builder.InitialCatalog = Constant.SQL_DATABASE_NAME;
 
                 using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                 {

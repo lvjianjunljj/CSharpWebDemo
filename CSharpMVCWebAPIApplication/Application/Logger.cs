@@ -88,7 +88,7 @@ namespace CSharpMVCWebAPIApplication.Application
             }
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 @"DefaultEndpointsProtocol=https;AccountName=" + Constant.LOGGER_ACCOUNT_NAME +
-                ";AccountKey=" + Constant.LOGGER_ACCOUNT_KEY);
+                ";AccountKey=" + Constant.LOGGER_ACCOUNT_KEY + ";EndpointSuffix=core.windows.net");
             CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
 
             CloudFileShare share = fileClient.GetShareReference(logFilePath[0]);
@@ -102,7 +102,7 @@ namespace CSharpMVCWebAPIApplication.Application
 
             for (int i = 1; i < logFilePath.Length - 1; i++)
             {
-                CloudFileDirectory nextLevelDir = sampleDir.GetDirectoryReference("TestLogs");
+                CloudFileDirectory nextLevelDir = sampleDir.GetDirectoryReference(logFilePath[i]);
                 if (!sampleDir.Exists())
                 {
                     Console.WriteLine(invalidExistLogFilePath);
