@@ -79,6 +79,7 @@
     <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.18\lib\net452\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -189,6 +190,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Constant.cs" />
+    <Compile Include="Application\Logger.cs" />
     <Compile Include="DAO\Azure\AzureSQLDatabase.cs" />
     <Compile Include="Service\Azure\AzureKeyVault.cs" />
     <Compile Include="Service\Azure\AzureServiceBusSingleClient.cs" />
@@ -233,6 +236,8 @@
     </Compile>
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Azure\KeyVault\ISecretProvider.cs" />
+    <Compile Include="Service\Azure\KeyVault\KeyVaultSecretProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -287,7 +292,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Application\" />
     <Folder Include="App_Data\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Views\Products\" />
