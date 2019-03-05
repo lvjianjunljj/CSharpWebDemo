@@ -191,7 +191,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Constant.cs" />
-    <Compile Include="Application\Logger.cs" />
+    <Compile Include="Application\Log\Logger.cs" />
+    <Compile Include="Application\Log\LoggerFactory.cs" />
     <Compile Include="DAO\Azure\AzureSQLDatabase.cs" />
     <Compile Include="Service\Azure\AzureKeyVault.cs" />
     <Compile Include="Service\Azure\AzureServiceBusSingleClient.cs" />

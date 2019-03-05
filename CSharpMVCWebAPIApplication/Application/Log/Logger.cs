@@ -3,7 +3,7 @@ using Microsoft.WindowsAzure.Storage; // Namespace for Storage Client Library
 using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Azure Blobs
 using Microsoft.WindowsAzure.Storage.File; // Namespace for Azure Files
 
-namespace CSharpMVCWebAPIApplication.Application
+namespace CSharpMVCWebAPIApplication.Application.Log
 {
     public enum LogType
     {
@@ -12,7 +12,7 @@ namespace CSharpMVCWebAPIApplication.Application
         Info
     }
 
-    class Logger
+    public class Logger
     {
         private enum WriteWay
         {
@@ -41,8 +41,9 @@ namespace CSharpMVCWebAPIApplication.Application
             }
 
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                @"DefaultEndpointsProtocol=https;AccountName=" + Constant.LOGGER_ACCOUNT_NAME + ";AccountKey=" +
-                Constant.LOGGER_ACCOUNT_KEY);
+                string.Format(@"DefaultEndpointsProtocol=https;AccountName={0};
+                AccountKey={1};EndpointSuffix=core.windows.net",
+                Constant.LOGGER_ACCOUNT_NAME, Constant.Instance.StorageAccountKey));
             CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
 
             CloudFileShare share = fileClient.GetShareReference(logFilePath[0]);
@@ -87,8 +88,10 @@ namespace CSharpMVCWebAPIApplication.Application
                 return;
             }
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                @"DefaultEndpointsProtocol=https;AccountName=" + Constant.LOGGER_ACCOUNT_NAME +
-                ";AccountKey=" + Constant.LOGGER_ACCOUNT_KEY + ";EndpointSuffix=core.windows.net");
+                string.Format(@"DefaultEndpointsProtocol=https;AccountName={0};
+                AccountKey={1};EndpointSuffix=core.windows.net",
+                Constant.LOGGER_ACCOUNT_NAME, Constant.Instance.StorageAccountKey));
+
             CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
 
             CloudFileShare share = fileClient.GetShareReference(logFilePath[0]);
