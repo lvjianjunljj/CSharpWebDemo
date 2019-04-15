@@ -104,10 +104,8 @@ namespace CSharpWebAPIApplication.Controllers
                 new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
                 new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
             };
-            return toJson(products);
+            return ConvertObjectToJsonResponseMessage(products);
         }
-
-
 
         private string ConvertObjectToXMLString(object classObject)
         {
@@ -121,7 +119,9 @@ namespace CSharpWebAPIApplication.Controllers
             }
             return xmlString;
         }
-        private static HttpResponseMessage toJson(Object obj)        {            String str;            if (obj is String || obj is Char)            {                str = obj.ToString();            }            else            {                JavaScriptSerializer serializer = new JavaScriptSerializer();                str = serializer.Serialize(obj);            }            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(str, Encoding.GetEncoding("UTF-8"), "application/json") };            return result;        }
+
+        // This is a stupid method.
+        private static HttpResponseMessage ConvertObjectToJsonResponseMessage(Object obj)        {            String str;            if (obj is String || obj is Char)            {                str = obj.ToString();            }            else            {                JavaScriptSerializer serializer = new JavaScriptSerializer();                str = serializer.Serialize(obj);            }            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(str, Encoding.GetEncoding("UTF-8"), "application/json") };            return result;        }
 
     }
 }
