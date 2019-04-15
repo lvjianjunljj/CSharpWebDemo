@@ -81,7 +81,7 @@ namespace CSharpWebAPIApplication.Controllers
             return result;
         }
 
-        [Route("testjson1")]
+        [Route("testjson")]
         public HttpResponseMessage GetTestJson1()
         {
             Product[] products = new Product[]
@@ -95,18 +95,7 @@ namespace CSharpWebAPIApplication.Controllers
             return result;
         }
 
-        [Route("testjson2")]
-        public HttpResponseMessage GetTestJson2()
-        {
-            Product[] products = new Product[]
-            {
-                new Product { Name = "Tomato Soup", Category = "Groceries", Price = 1 },
-                new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
-                new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
-            };
-            return ConvertObjectToJsonResponseMessage(products);
-        }
-
+        // The two method for converting object to xml string
         private string ConvertObjectToXMLString(object classObject)
         {
             string xmlString = null;
@@ -120,8 +109,13 @@ namespace CSharpWebAPIApplication.Controllers
             return xmlString;
         }
 
-        // This is a stupid method.
-        private static HttpResponseMessage ConvertObjectToJsonResponseMessage(Object obj)        {            String str;            if (obj is String || obj is Char)            {                str = obj.ToString();            }            else            {                JavaScriptSerializer serializer = new JavaScriptSerializer();                str = serializer.Serialize(obj);            }            HttpResponseMessage result = new HttpResponseMessage { Content = new StringContent(str, Encoding.GetEncoding("UTF-8"), "application/json") };            return result;        }
-
+        private string ConvertObjectToXMLString2(object value)
+        {
+            StringBuilder sb = new StringBuilder();
+            XmlWriter writer = XmlWriter.Create(sb);
+            XmlSerializer serial = new XmlSerializer(value.GetType());
+            serial.Serialize(writer, value);
+            return sb.ToString();
+        }
     }
 }
