@@ -16,7 +16,7 @@ namespace CSharpWebAPIApplication
             //GlobalConfiguration.Configuration.Formatters.Clear();
             //GlobalConfiguration.Configuration.Formatters.Add(new JsonMediaTypeFormatter());
 
-            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+            //GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
             ////GlobalConfiguration.Configuration.Formatters.JsonFormatter.SupportedMediaTypes.Clear();
         }
     }
