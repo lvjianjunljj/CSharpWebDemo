@@ -4,16 +4,19 @@
 
 /.vs
 
+/\CSharpCoreWebAPIApplication/bin
 /CSharpMVCWebAPIApplication/bin
 /CSharpMVCWebAPIApplication.Tests/bin
 /CSharpWebAPIApplication/bin
 /CSharpWebFormsApplication/bin
 
+/\CSharpCoreWebAPIApplication/obj
 /CSharpMVCWebAPIApplication/obj
 /CSharpMVCWebAPIApplication.Tests/obj
 /CSharpWebAPIApplication/obj
 /CSharpWebFormsApplication/obj
 
+/CSharpCoreWebAPIApplication/CSharpCoreWebAPIApplication.csproj.user
 /CSharpMVCWebAPIApplication/CSharpMVCWebAPIApplication.csproj.user
 /CSharpWebAPIApplication/CSharpWebAPIApplication.csproj.user
 /CSharpWebFormsApplication/CSharpWebFormsApplication.csproj.user
