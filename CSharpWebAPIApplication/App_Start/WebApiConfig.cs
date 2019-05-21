@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Web.Http;
-
-namespace CSharpWebAPIApplication
+﻿namespace CSharpWebAPIApplication
 {
+    using System.Net.Http.Headers;
+    using System.Web.Http;
+
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
@@ -18,6 +15,7 @@ namespace CSharpWebAPIApplication
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            // For the default mapping without tag in controller
             //config.Routes.MapHttpRoute(
             //    name: "DefaultApi",
             //    routeTemplate: "api/{controller}/{id}",

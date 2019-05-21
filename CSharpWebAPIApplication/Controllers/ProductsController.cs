@@ -1,20 +1,19 @@
-﻿using CSharpWebAPIApplication.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Web.Http;
-using System.Web.Http.Controllers;
-using System.Web.Script.Serialization;
-using System.Xml;
-using System.Xml.Serialization;
-
-namespace CSharpWebAPIApplication.Controllers
+﻿namespace CSharpWebAPIApplication.Controllers
 {
+    using CSharpWebAPIApplication.Models;
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Net.Http;
+    using System.Text;
+    using System.Web.Http;
+    using System.Web.Http.Controllers;
+    using System.Xml;
+    using System.Xml.Serialization;
+
     [RoutePrefix("api/productss")]
     public class ProductsController : BaseController
     {
@@ -29,6 +28,7 @@ namespace CSharpWebAPIApplication.Controllers
             };
         }
         [Route("all/1")]
+        [Authorize]
         public IEnumerable<string> GetProducts()
         {
             string[] res = new string[] { "1", "2" };
