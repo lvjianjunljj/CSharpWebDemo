@@ -77,36 +77,6 @@ paths:
           description: Internal Server Error
       security:
         - Bearer: []
-  '/alerts/QoB/dataset/kusto/{datasetId}':
-    get:
-      tags:
-        - alerts
-      summary: Get the QoB alerts of a specific dataset through Kusto
-      description: Get all the QoB alerts for the specific dataset through Kusto
-      operationId: getAlertsBasedOnDatasetIdByKusto
-      produces:
-        - application/json
-      parameters:
-        - name: datasetId
-          in: path
-          description: id of dataset
-          required: true
-          type: string
-      responses:
-        '200':
-          description: successful operation
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/AlertDatasetInfoFromKusto'
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        '500':
-          description: Internal Server Error
-      security:
-        - Bearer: []
   /alerts/stats/active_trend:
     get:
       tags:
