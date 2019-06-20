@@ -9,6 +9,7 @@
     using System.Net;
     using System.Net.Http;
     using System.Text;
+    using System.Threading;
     using System.Web.Http;
     using System.Web.Http.Controllers;
     using System.Xml;
@@ -37,9 +38,24 @@
         }
 
         [Route("all/2/{id}")]
+        [HttpPost]
+        // If we don't set the request method by the above label, it will check the start of function name to set the request method.
+        // Just like this api, if there isn't the label [HttpPost], the request method to request this api should be Get.
+        // And the fibal default request method is Post, in other words, if we don't set the request method by the above label, and cant check the request method from the start of function name, the request method will be set to Post.
         public IEnumerable<string> GetProducts(int id)
         {
             string[] res = new string[] { "1", "2", id + "_" };
+            Thread.Sleep(5000);
+            return res;
+            //return products;
+        }
+
+        [Route("all/patch/{id}")]
+        [HttpPatch]
+        public IEnumerable<string> GePatch(int id)
+        {
+            string[] res = new string[] { "1", "2", id + "_" };
+            Thread.Sleep(15000);
             return res;
             //return products;
         }
