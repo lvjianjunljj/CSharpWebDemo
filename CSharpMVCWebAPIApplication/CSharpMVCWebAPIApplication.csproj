@@ -239,6 +239,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Azure\KeyVault\ISecretProvider.cs" />
     <Compile Include="Service\Azure\KeyVault\KeyVaultSecretProvider.cs" />
+    <Compile Include="Service\Filter\MyActionFilter.cs" />
+    <Compile Include="Service\Filter\MyActionFilterAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

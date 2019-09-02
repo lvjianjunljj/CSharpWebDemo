@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,11 +13,13 @@ namespace CSharpWebAPIApplication.Controllers
         // GET: api/Test
         public IEnumerable<string> Get()
         {
+            //Debug.WriteLine(1234);
+            //Debug.WriteLine(this.Request.ToString());
             return new string[] { "value1", "value2" };
         }
 
         // GET: api/Test/5
-        public string Get(int id)
+        public string Get(string id)
         {
             return "id_" + id;
         }

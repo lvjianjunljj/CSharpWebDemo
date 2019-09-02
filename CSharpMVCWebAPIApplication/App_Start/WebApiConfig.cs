@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpMVCWebAPIApplication.Service.Filter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -20,6 +21,17 @@ namespace CSharpMVCWebAPIApplication
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
+            // Filters setting
+            config.Filters.Add(new MyActionFilterAttribute());
+
+            //  Here we just can use the implement class of interface System.Web.Http.Filters.IFilter.
+            // But cannot use the implement class of interface System.Web.Mvc.IActionFilter
+            //config.Filters.Add(new MyActionFilter());
+
+            // Note: We can set filter both here and in the FilterConfig, but what we use in these two plcaes are different. 
+            //And they will run for different request, I will do more test on this.
 
 
             // For this set, the url "http://localhost:5014/api/products" is mapping the DefaultApi MapHttpRoute

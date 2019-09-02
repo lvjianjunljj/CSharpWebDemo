@@ -12,6 +12,7 @@
     using System.Threading;
     using System.Web.Http;
     using System.Web.Http.Controllers;
+    using System.Web.Http.Filters;
     using System.Xml;
     using System.Xml.Serialization;
 

@@ -156,6 +156,8 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Service\Filter\MyActionFilter.cs" />
+    <Compile Include="Service\Filter\MyActionFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
