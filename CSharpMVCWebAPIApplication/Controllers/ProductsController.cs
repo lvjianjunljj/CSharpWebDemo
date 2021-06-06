@@ -32,24 +32,25 @@ namespace CSharpMVCWebAPIApplication.Controllers
         }
         // Url "http://localhost:5014/api/products/1" map this function, because the input name of this 
         // function is "id", and the default routeTemplate is "api/{controller}/{id}" in WebApiConfig.cs.
-        public Product GetProductsById(int id)
+        public Product GetProductsById(string id)
         {
-            string appendString;
-            try
-            {
-                appendString = AzureKeyVault.GetSecret("csharpmvcwebapikeyvault", "AppSecret");
-            }
-            catch (Exception e)
-            {
-                appendString = $"Getting appendString throw Exception: {e.Message}";
-            }
-            List<string> appendLineList = AzureSQLDatabase.GetAllData();
-            var product = products.FirstOrDefault((p) => p.Id == id);
-            product.Name += $" :{appendString}";
-            foreach (string appendLine in appendLineList)
-            {
-                product.Name += appendLine;
-            }
+            //string appendString;
+            // The processing of getting data from Azure SQL has been deprecated
+            //try
+            //{
+            //    appendString = AzureKeyVault.GetSecret("csharpmvcwebapikeyvault", "AppSecret");
+            //}
+            //catch (Exception e)
+            //{
+            //    appendString = $"Getting appendString throw Exception: {e.Message}";
+            //}
+            //List<string> appendLineList = AzureSQLDatabase.GetAllData();
+            var product = products.FirstOrDefault((p) => p.Id == int.Parse(id));
+            //product.Name += $" :{appendString}";
+            //foreach (string appendLine in appendLineList)
+            //{
+            //    product.Name += appendLine;
+            //}
             //if (product == null)
             //{
             //    throw new HttpResponseException(HttpStatusCode.NotFound);
