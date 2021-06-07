@@ -4,6 +4,7 @@
     using System.Net.Http;
     using System.Web.Http;
 
+    [Authorize]
     [RoutePrefix("api/tests")]
     public class TestController : ApiController
     {
