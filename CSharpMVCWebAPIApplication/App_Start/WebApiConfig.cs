@@ -1,11 +1,8 @@
-﻿using CSharpMVCWebAPIApplication.Service.Filter;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace CSharpMVCWebAPIApplication
+﻿namespace CSharpMVCWebAPIApplication
 {
+    using CSharpMVCWebAPIApplication.Service.Filter;
+    using System.Web.Http;
+
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
