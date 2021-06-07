@@ -2,7 +2,8 @@
 ![CSharpWebAPIApplication](https://github.com/lvjianjunljj/CSharpWebDemo/blob/master/info_img/CSharpWebAPIApplication.png)
 
 2. Project **CSharpWebAPIApplication472** is same as the project *CSharpWebAPIApplication*, but it is based on ASP.Net framework 4.7.2 and created by VS 2019. 
-![CSharpWebAPIApplication](https://github.com/lvjianjunljj/CSharpWebDemo/blob/master/info_img/CSharpWebAPIApplication472.png)
+![CSharpWebAPIApplication472_1](https://github.com/lvjianjunljj/CSharpWebDemo/blob/master/info_img/CSharpWebAPIApplication472_1.png)
+![CSharpWebAPIApplication472_2](https://github.com/lvjianjunljj/CSharpWebDemo/blob/master/info_img/CSharpWebAPIApplication472_2.png)
 
 
 
