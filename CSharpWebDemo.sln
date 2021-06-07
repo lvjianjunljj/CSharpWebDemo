@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpWebAPIApplication", "CSharpWebAPIApplication\CSharpWebAPIApplication.csproj", "{3DBA9101-B39A-457B-9363-8A80190B6ECF}"
 EndProject
@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpMVCWebAPIApplication.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpWebFormsApplication", "CSharpWebFormsApplication\CSharpWebFormsApplication.csproj", "{2774342D-894B-4FC7-9BFB-F60A6F086C54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCoreWebAPIApplication", "CSharpCoreWebAPIApplication\CSharpCoreWebAPIApplication.csproj", "{914761B0-62F6-4232-B217-FF196EB0B500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpCoreWebAPIApplication", "CSharpCoreWebAPIApplication\CSharpCoreWebAPIApplication.csproj", "{914761B0-62F6-4232-B217-FF196EB0B500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpWebAPIApplication472", "CSharpWebAPIApplication472\CSharpWebAPIApplication472.csproj", "{A84FE304-090F-4CF0-8373-1EF4527A8754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{914761B0-62F6-4232-B217-FF196EB0B500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{914761B0-62F6-4232-B217-FF196EB0B500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{914761B0-62F6-4232-B217-FF196EB0B500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A84FE304-090F-4CF0-8373-1EF4527A8754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84FE304-090F-4CF0-8373-1EF4527A8754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84FE304-090F-4CF0-8373-1EF4527A8754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84FE304-090F-4CF0-8373-1EF4527A8754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
